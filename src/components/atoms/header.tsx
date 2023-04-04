@@ -1,7 +1,9 @@
-import React from 'react'
+import React from "react";
 
-export const Header = () => {
-  return (
-    <div>Header</div>
-  )
-}
+type HeaderProps = {
+  title: string;
+  className: string;
+};
+export const Header = ({ title, className }: HeaderProps) => {
+  return <h1 className={className}>{title}</h1>;
+};
