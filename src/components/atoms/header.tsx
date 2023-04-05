@@ -1,9 +1,8 @@
 import React from "react";
 
-type HeaderProps = {
-  title: string;
-  className: string;
-};
+import { HeaderProps } from "./types";
+
 export const Header = ({ title, className }: HeaderProps) => {
   return <h1 className={className}>{title}</h1>;
 };
+
