@@ -6,6 +6,7 @@ type ButtonProps = {
   className?: string;
   children?: ReactNode;
   variant?: "container" | "outline" | "text";
+  func?: "edit" | "delete" | "add";
   action?: () => {};
 };
 
@@ -14,10 +15,14 @@ export const Button = ({
   className,
   children,
   variant = "container",
+  func = "edit",
 }: ButtonProps) => {
-  const styles = new ButtonStyles(variant).getButtonStyle();
+  const btnStyles = new ButtonStyles(variant);
+  btnStyles.setFunctionType(func);
+  const styles = btnStyles.getButtonStyle();
+
   return (
-    <button className={`${className} ${styles}`}>
+    <button className={`${className || ""} ${styles}`}>
       {children}
       <span>{text}</span>
     </button>
