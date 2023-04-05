@@ -1,6 +1,6 @@
 import React from "react";
 
-import {PanelProps} from './types';
+import { PanelProps } from "./types";
 
 export const Panel = ({ children, title }: PanelProps) => {
   return (
