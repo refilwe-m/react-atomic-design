@@ -1,14 +1,6 @@
-import React, { Children, ReactNode } from "react";
-import { ButtonStyles } from "../../common/styles";
+import React from "react";
 
-type ButtonProps = {
-  text: string;
-  className?: string;
-  children?: ReactNode;
-  variant?: "container" | "outline" | "text";
-  func?: "edit" | "delete" | "add";
-  action?: () => {};
-};
+import { ButtonProps } from "./types";
 
 export const Button = ({
   text,
@@ -17,13 +9,35 @@ export const Button = ({
   variant = "container",
   func = "edit",
 }: ButtonProps) => {
-  const btnStyles = new ButtonStyles(variant);
-  btnStyles.setFunctionType(func);
-  const styles = btnStyles.getButtonStyle();
+  let btnStyles: string = "";
+
+  switch (variant) {
+    case "container":
+      btnStyles =
+        "bg-green-600 rounded-md text-white inline-block text-xs font-medium self-center px-6 py-2";
+      break;
+    case "outline":
+      btnStyles =
+        func == "delete"
+          ? "border-red-600 p-2 inline-block rounded-md border text-red-600"
+          : "bg-indigo-500 inline-block rounded-md text-white px-6 py-2";
+      break;
+    case "text":
+      btnStyles =
+        "inline-block px-6 py-2 font-medium text-sm leading-tight text-white";
+      break;
+    default:
+      btnStyles =
+        "bg-green-600 rounded-md text-white inline-block text-xs font-medium self-center px-6 py-2";
+  }
 
   return (
-    <button className={`${className || ""} ${styles}`}>
-      {children}
+    <button
+      className={`flex gap-2 items-center ${className || ""} ${btnStyles}`}
+    >
+      <span className="text-white" id="icon">
+        {children}
+      </span>
       <span>{text}</span>
     </button>
   );
