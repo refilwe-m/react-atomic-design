@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 export type PanelProps = {
   children: React.ReactNode;
   title?: string;
+  className?: string;
 };
 
 export type AvatarProps = {
