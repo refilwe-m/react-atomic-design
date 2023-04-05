@@ -1,10 +1,11 @@
 import React, { Children, ReactNode } from "react";
+import { ButtonStyles } from "../../common/styles";
 
 type ButtonProps = {
   text: string;
   className?: string;
   children?: ReactNode;
-  variant?: "filled" | "outline";
+  variant?: "container" | "outline" | "text";
   action?: () => {};
 };
 
@@ -12,14 +13,11 @@ export const Button = ({
   text,
   className,
   children,
-  variant = "filled",
+  variant = "container",
 }: ButtonProps) => {
+  const styles = new ButtonStyles(variant).getButtonStyle();
   return (
-    <button
-      className={`${className} flex gap-2 justify-center items-center ${
-        variant !== "filled" ? "border-solid bg-transparent" : ""
-      }`}
-    >
+    <button className={`${className} ${styles}`}>
       {children}
       <span>{text}</span>
     </button>
