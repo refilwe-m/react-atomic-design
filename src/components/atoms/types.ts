@@ -8,7 +8,8 @@ export type PanelProps = {
 
 export type AvatarProps = {
   imgSrc: string;
-  onlineStatus?: "Online" | "Offline";
+  onlineStatus?: "Online" | "Offline" | "Hidden";
+  className?: string;
 };
 
 export type ErrorTextProps = { message: string };
