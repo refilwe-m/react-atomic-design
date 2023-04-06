@@ -1,16 +1,27 @@
 import React from "react";
 
-type InputProps = {
-  placeholder: string;
-  label: string;
-  hasError: boolean;
-  color: string;
-};
+import { InputProps } from "../atoms/types";
+import { ErrorText } from "../../components";
 
-export const InputField = ({ placeholder }: InputProps) => {
+export const InputField = ({ placeholder, color, ...props }: InputProps) => {
+  let styles = "";
+  styles = props.label
+    ? "bg-transparent border-2 border-gray-300"
+    : "border-none";
   return (
-    <input type="text" placeholder={placeholder}>
-      InputField
-    </input>
+    <section className="flex flex-col gap-2">
+      {props.label && (
+        <label className="text-white mb-1 pl-1" htmlFor="my-input">
+          {props.label}
+        </label>
+      )}
+      <input
+        id="my-input"
+        type="text"
+        className={`text-${color} w-96 rounded-lg py-2 px-3 placeholder:text-center placeholder:font-medium ${styles}}`}
+        placeholder={props.label ? "" : placeholder}
+      ></input>
+      <ErrorText message="Oops inavlid input" />
+    </section>
   );
 };

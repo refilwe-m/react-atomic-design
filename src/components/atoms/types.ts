@@ -27,3 +27,11 @@ export type ButtonProps = {
   func?: "edit" | "delete" | "add";
   action?: () => {};
 };
+
+export type InputProps = {
+  label?: string;
+  color: string;
+  placeholder: string;
+  className?: string;
+  hasError?: boolean;
+};
