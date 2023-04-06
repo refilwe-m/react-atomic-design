@@ -2,6 +2,7 @@ export * from "./atoms/button";
 export * from "./atoms/header";
 export * from "./atoms/error-text";
 export * from "./atoms/avatar";
+export * from "./atoms/panel";
 
 export * from "./molecules/clock-panel";
 export * from "./molecules/form-panel";
