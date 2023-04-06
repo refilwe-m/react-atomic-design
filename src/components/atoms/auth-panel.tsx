@@ -2,8 +2,10 @@ import React, { Children } from "react";
 
 import { AuthPanelProps } from "./types";
 
-export const AuthPanel = ({ children }: AuthPanelProps) => {
+export const AuthPanel = ({ children, className }: AuthPanelProps) => {
   return (
-    <section className="auth-panel bg-[#060606] rounded-sm">{children}</section>
+    <section className={`auth-panel bg-[#060606] rounded-sm ${className}`}>
+      {children}
+    </section>
   );
 };
