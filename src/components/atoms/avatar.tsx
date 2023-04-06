@@ -1,10 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-type AvatarProps = {
-  imgSrc: string;
-  className?: string;
-  onlineStatus?: "Online" | "Offline" | "Hidden";
-};
+import { AvatarProps } from "./types";
 
 export const Avatar = ({ imgSrc, onlineStatus, className }: AvatarProps) => {
   const color = onlineStatus === "Online" ? "bg-green-500" : "bg-red-500";
