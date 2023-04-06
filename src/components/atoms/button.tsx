@@ -35,9 +35,11 @@ export const Button = ({
     <button
       className={`flex gap-2 items-center ${className || ""} ${btnStyles}`}
     >
-      <span className="text-white" id="icon">
-        {children}
-      </span>
+      {children && (
+        <span className="text-white" id="icon">
+          {children}
+        </span>
+      )}
       <span>{text}</span>
     </button>
   );
