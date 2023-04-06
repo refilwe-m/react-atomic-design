@@ -19,21 +19,20 @@ export const Button = ({
     case "outline":
       btnStyles =
         func == "delete"
-          ? "border-red-600 p-2 inline-block rounded-md border text-red-600"
-          : "bg-indigo-500 inline-block rounded-md text-white px-6 py-2";
+          ? "border-red-600 inline-block rounded-md border text-red-600"
+          : "bg-indigo-500 inline-block rounded-md text-white";
       break;
     case "text":
-      btnStyles =
-        "inline-block px-6 py-2 font-medium text-sm leading-tight text-white";
+      btnStyles = "inline-block font-medium text-sm leading-tight text-white";
       break;
     default:
       btnStyles =
-        "bg-green-600 rounded-md text-white inline-block text-xs font-medium self-center px-6 py-2";
+        "bg-green-600 rounded-md text-white inline-block text-xs font-medium self-center";
   }
 
   return (
     <button
-      className={`flex gap-2 items-center ${className || ""} ${btnStyles}`}
+      className={`flex gap-2 justify-center items-center ${className || ""} ${btnStyles}`}
     >
       {children && (
         <span className="text-white" id="icon">
