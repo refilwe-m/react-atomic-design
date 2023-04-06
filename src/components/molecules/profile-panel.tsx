@@ -1,0 +1,62 @@
+import React from "react";
+import { Panel } from "../atoms/panel";
+import { Avatar } from "../atoms/avatar";
+import { Button } from "..";
+
+export const ProfilePanel = () => {
+  const userProfile = {
+    Status: "Active",
+    Address: "1234 Main St, New York, NY 10001",
+    Phone: "012-345-6789",
+    Email: "jane@codehesion.co.za",
+  };
+  const getValues = (obj: Object) => {
+    return Object.values(obj);
+  };
+  const getKeys = (obj: Object) => {
+    return Object.keys(obj);
+  };
+  return (
+    <Panel className="w-full" title="Technician's Profile">
+      <section className="profile-panel flex">
+        <section className="profile-panel-avatar flex gap-4 w-[50%]">
+          <Avatar className="" imgSrc="https://picsum.photos/100" />
+          <section className="profile-panel__avatar ">
+            <section className="profile-panel__info mb-3">
+              <h3>John Doe</h3>
+              <p>Technician</p>
+            </section>
+            <section className="profile-options">
+              <section className="profile-options__edit flex gap-2">
+                <Button
+                  className="px-5 py-1 w-16 text-xs"
+                  variant="outline"
+                  text="Edit"
+                />
+                <Button
+                  className="px-5 w-16 text-xs"
+                  variant="outline"
+                  text="Delete"
+                  func="delete"
+                />
+              </section>
+            </section>
+          </section>
+        </section>
+
+        <section className="w-[50%] flex justify-between">
+          <section className="profile-panel__details flex flex-col gap-1">
+            {getKeys(userProfile).map((title) => {
+              return <h1>{title}</h1>;
+            })}
+          </section>
+          <section className="profile-panel__details flex flex-col gap-1">
+            {getValues(userProfile).map((value) => {
+              return <h1>{value}</h1>;
+            })}
+          </section>
+        </section>
+      </section>
+    </Panel>
+  );
+};
