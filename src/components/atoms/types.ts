@@ -30,4 +30,5 @@ export type ButtonProps = {
 
 export type AuthPanelProps = {
   children: ReactNode;
+  className?: string;
 };
