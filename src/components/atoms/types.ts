@@ -27,3 +27,7 @@ export type ButtonProps = {
   func?: "edit" | "delete" | "add";
   action?: () => {};
 };
+
+export type AuthPanelProps = {
+  children: ReactNode;
+};
