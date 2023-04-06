@@ -36,3 +36,8 @@ export type InputProps = {
   hasError?: boolean;
   type?: string;
 };
+
+export type AuthPanelProps = {
+  children: ReactNode;
+  className?: string;
+};
