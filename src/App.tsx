@@ -28,7 +28,7 @@ function App() {
         <Button text="Default" />
         <Button text="Outline" className="px-3 py-1" variant="outline" />
         <Button text="Text" variant="text" />
-        <Button text="Outline with Delete" func="delete" variant="outline" />
+        <Button text="Outline with Delete" className="px-3 py-1" func="delete" variant="outline" />
       </section>
     </div>
   );
