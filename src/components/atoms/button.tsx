@@ -5,7 +5,7 @@ import { ButtonProps } from "./types";
 export const Button = ({
   text,
   className,
-  children,
+  icon,
   variant = "container",
   func = "edit",
 }: ButtonProps) => {
@@ -34,9 +34,9 @@ export const Button = ({
     <button
       className={`flex gap-2 justify-center items-center ${className || ""} ${btnStyles}`}
     >
-      {children && (
+      {icon && (
         <span className="text-white" id="icon">
-          {children}
+          {icon}
         </span>
       )}
       <span>{text}</span>
