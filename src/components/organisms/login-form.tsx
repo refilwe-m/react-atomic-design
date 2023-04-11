@@ -9,7 +9,7 @@ export const LoginForm = () => {
         className="text-3xl font-extrabold text-white my-8 text-center font-momo"
         title="Codehesion Rockets"
       />
-      <form className="text-black flex flex-col justify-center gap-8">
+      <form className="text-black flex flex-col items-center justify-center gap-8">
         <InputField
           color="text-black"
           className="placeholder:font-extrabold placeholder:text-gray-600"
@@ -35,7 +35,7 @@ export const LoginForm = () => {
           </section>
         </section>
 
-      <Button className="w-60 text-3xl" text="Login" />
+        <Button className="w-60 text-3xl" text="Login" />
       </form>
     </AuthPanel>
   );
