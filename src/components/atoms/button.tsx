@@ -5,7 +5,7 @@ import { ButtonProps } from "./types";
 export const Button = ({
   text,
   className,
-  children,
+  icon,
   variant = "container",
   func = "edit",
 }: ButtonProps) => {
@@ -14,7 +14,7 @@ export const Button = ({
   switch (variant) {
     case "container":
       btnStyles =
-        "bg-green-600 rounded-md text-white inline-block text-xs font-medium self-center px-6 py-2";
+        "bg-green-500 rounded-md text-white inline-block text-xs font-medium self-center px-6 py-2";
       break;
     case "outline":
       btnStyles =
@@ -27,16 +27,16 @@ export const Button = ({
       break;
     default:
       btnStyles =
-        "bg-green-600 rounded-md text-white inline-block text-xs font-medium self-center";
+        "bg-green-500 rounded-md text-white inline-block text-xs font-medium self-center";
   }
 
   return (
     <button
       className={`flex gap-2 justify-center items-center ${className || ""} ${btnStyles}`}
     >
-      {children && (
+      {icon && (
         <span className="text-white" id="icon">
-          {children}
+          {icon}
         </span>
       )}
       <span>{text}</span>
