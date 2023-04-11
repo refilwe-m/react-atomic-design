@@ -9,3 +9,5 @@ export * from "./molecules/form-panel";
 export * from "./molecules/user-panel";
 export * from "./molecules/input-field";
 export * from "./molecules/job-panel";
+
+export * from "./pages/form-page";
