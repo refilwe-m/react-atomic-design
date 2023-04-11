@@ -28,10 +28,6 @@ export type ButtonProps = {
   action?: () => {};
 };
 
-export type AuthPanelProps = {
-  children: ReactNode;
-  className?: string;
-
 export type InputProps = {
   label?: string;
   color: string;
@@ -39,4 +35,9 @@ export type InputProps = {
   className?: string;
   hasError?: boolean;
   type?: string;
+};
+
+export type AuthPanelProps = {
+  children: ReactNode;
+  className?: string;
 };
