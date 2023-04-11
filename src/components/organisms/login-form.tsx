@@ -10,17 +10,13 @@ export const LoginForm = () => {
         title="Codehesion Rockets"
       />
       <form className="text-black flex flex-col items-center justify-center gap-8">
-        <InputField
-          color="text-black"
-          className="placeholder:font-extrabold placeholder:text-gray-600"
-          placeholder="Username"
-        />
+        <InputField color="text-black" className="p" placeholder="Username" />
         <section>
           <InputField
             color="text-gray-600"
             placeholder="Password"
             type="password"
-            className="placeholder:font-extrabold placeholder:text-gray-600 mb-2"
+            className="mb-2"
           />
           <section className="flex justify-between text-xs">
             <label className="text-white" htmlFor="remember-me">
@@ -28,14 +24,14 @@ export const LoginForm = () => {
               Keep me signed in
             </label>
             <Button
-              className="text-blue-600 text-xs"
+              className="text-blue-700 hover:text-blue-500 text-xs"
               variant="text"
               text="Forgot Password?"
             />
           </section>
         </section>
 
-        <Button className="w-60 text-3xl" text="Login" />
+        <Button className="w-60 text-3xl hover:bg-green-700" text="Login" />
       </form>
     </AuthPanel>
   );

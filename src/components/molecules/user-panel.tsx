@@ -3,7 +3,7 @@ import { MdEmail } from "react-icons/md";
 
 import { Panel, Avatar } from "..";
 
-export const UserPanel = () => {
+export const UserPanel = ({className}:{className?:string}) => {
   const userDetails = {
     name: "John Doe",
     job: "Software Engineer",
@@ -13,7 +13,7 @@ export const UserPanel = () => {
   const { name, job, email, profile } = userDetails;
 
   return (
-    <Panel>
+    <Panel className={className}>
       <section className="user-panel px-2 w-[400px] relative ">
         <section className="email absolute   left-4 top-20 ">
           <a

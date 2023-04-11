@@ -4,13 +4,15 @@ import { PanelProps } from "./types";
 
 export const Panel = ({ children, title, className }: PanelProps) => {
   return (
-    <section
-      className={`panel inline-block text-white p-3 bg-[#141517] ${className}`}
+    <main
+      className={`panel text-white bg-[#191a1f] drop-shadow-xl rounded sm p-3 ${
+        className || ""
+      }`}
     >
-      {title && <h1 className="text-1xl pb-5">{title}</h1>}
-      <main className="bg-[#191a1f] drop-shadow-xl rounded sm p-3">
+      <section className="panel-content">
+        {title && <h1 className="text-1xl text-center pb-5">{title}</h1>}
         {children}
-      </main>
-    </section>
+      </section>
+    </main>
   );
 };
