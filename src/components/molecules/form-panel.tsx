@@ -4,7 +4,7 @@ import { Panel } from "../atoms/panel";
 
 export const FormPanel = () => {
   return (
-    <Panel title="Forms Assigned">
+    <Panel>
       <section className="form-panel">
         <form action="" className="flex flex-col gap-2">
           <section className="title flex items-center mr-4">
