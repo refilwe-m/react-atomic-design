@@ -1,7 +1,6 @@
 import React from "react";
-import { Panel } from "../atoms/panel";
-import { Avatar } from "../atoms/avatar";
-import { Button } from "..";
+
+import { Avatar, Button, Panel } from "..";
 
 export const ProfilePanel = () => {
   const userProfile = {
