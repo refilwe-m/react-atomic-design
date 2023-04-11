@@ -22,7 +22,7 @@ export type HeaderProps = {
 export type ButtonProps = {
   text: string;
   className?: string;
-  children?: ReactNode;
+  icon?: ReactNode | string;
   variant?: "container" | "outline" | "text";
   func?: "edit" | "delete" | "add";
   action?: () => {};
@@ -31,4 +31,12 @@ export type ButtonProps = {
 export type AuthPanelProps = {
   children: ReactNode;
   className?: string;
+
+export type InputProps = {
+  label?: string;
+  color: string;
+  placeholder: string;
+  className?: string;
+  hasError?: boolean;
+  type?: string;
 };
