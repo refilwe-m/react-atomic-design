@@ -18,7 +18,7 @@ export const FormPage = () => {
           variant="outline"
           icon={<FiPlus />}
           text="Create New"
-        ></Button>
+        />
       </header>
       <form action="">
         <p className="text-sm my-3">Forms assigned</p>
