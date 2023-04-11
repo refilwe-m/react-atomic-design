@@ -1,13 +1,5 @@
-export * from "./atoms/button";
-export * from "./atoms/header";
-export * from "./atoms/error-text";
-export * from "./atoms/avatar";
-export * from "./atoms/panel";
-
-export * from "./molecules/clock-panel";
-export * from "./molecules/form-panel";
-export * from "./molecules/user-panel";
-export * from "./molecules/input-field";
-export * from "./molecules/job-panel";
-
-export * from "./pages/form-page";
+export * from "./atoms";
+export * from "./molecules";
+export * from "./pages";
+export * from "./organisms";
+export * from "./templates";
