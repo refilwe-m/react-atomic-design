@@ -34,4 +34,5 @@ export type InputProps = {
   placeholder: string;
   className?: string;
   hasError?: boolean;
+  type?: string;
 };
