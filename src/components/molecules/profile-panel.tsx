@@ -1,18 +1,22 @@
 import React from "react";
 
 import { Avatar, Button, Panel } from "..";
+import { ProfileProps } from "./types";
 
 export const ProfilePanel = () => {
-  const userProfile = {
+  
+  const userProfile: ProfileProps = {
     Status: "Active",
     Address: "1234 Main St, New York, NY 10001",
     Phone: "012-345-6789",
     Email: "jane@codehesion.co.za",
   };
-  const getValues = (obj: Object) => {
+
+  const getValues = (obj: ProfileProps) => {
     return Object.values(obj);
   };
-  const getKeys = (obj: Object) => {
+
+  const getKeys = (obj: ProfileProps) => {
     return Object.keys(obj);
   };
   return (
