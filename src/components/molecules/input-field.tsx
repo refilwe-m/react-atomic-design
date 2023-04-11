@@ -20,8 +20,8 @@ export const InputField = ({ placeholder, color, ...props }: InputProps) => {
         type={props.type || "text"}
         className={`text-${color} w-96 rounded-lg py-2 px-3 placeholder:text-center placeholder:font-medium ${styles}}`}
         placeholder={props.label ? "" : placeholder}
-      ></input>
-      <ErrorText message="Oops inavlid input" />
+      />
+      {props.hasError && <ErrorText message="Oops inavlid input" />}
     </section>
   );
 };
