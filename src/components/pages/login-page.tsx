@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
+
+import { LoginForm } from "..";
 
 export const LoginPage = () => {
   return (
-    <div>LoginPage</div>
-  )
-}
+    <section className="auth w-2/3 drop-shadow-xl">
+      <LoginForm />
+    </section>
+  );
+};
