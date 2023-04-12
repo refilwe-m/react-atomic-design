@@ -1,5 +1,8 @@
-import React from "react";
+import { ProfilePanel } from "..";
 
 export const ProfilePage = () => {
-  return <div>ProfilePage</div>;
-};
+  return (
+    <section className="profile-panel">
+      <ProfilePanel />
+    </section>
+  );

@@ -1,5 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
-export const AuthLayout = () => {
-  return <div>AuthLayout</div>;
+export const AuthLayout = ({ children }: { children: ReactNode }) => {
+  return (
+    <section className="w-screen h-screen flex justify-center items-center">
+      {children}
+    </section>
+  );
 };
