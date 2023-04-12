@@ -36,6 +36,7 @@ export type InputProps = {
   hasError?: boolean;
   type?: string;
   name: string;
+  errorMsg?: string;
 };
 
 export type AuthPanelProps = {
