@@ -1,5 +1,7 @@
 import React from "react";
 
-export const AppLayout = () => {
+import { ChildrenProps } from "../../common/types";
+
+export const AppLayout = ({ children }: ChildrenProps) => {
   return <div>AppLayout</div>;
 };

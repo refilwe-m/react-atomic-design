@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 import { AuthPanel, Button, Header, InputField } from "..";
 
 export const RegisterForm = () => {
+  const navigate = useNavigate();
+
   return (
     <AuthPanel className="p-12">
       <Header
@@ -30,6 +33,7 @@ export const RegisterForm = () => {
           />
           <section className="flex justify-between text-xs">
             <Button
+              onClick={() => navigate("/login")}
               className="text-blue-700 hover:text-blue-500 text-xs"
               variant="text"
               text=" Already have an acoount?"
@@ -37,7 +41,11 @@ export const RegisterForm = () => {
           </section>
         </section>
 
-        <Button className="w-60 text-3xl hover:bg-green-700" text="Register" />
+        <Button
+          onClick={() => navigate("/login")}
+          className="w-60 text-3xl hover:bg-green-700"
+          text="Register"
+        />
       </form>
     </AuthPanel>
   );
