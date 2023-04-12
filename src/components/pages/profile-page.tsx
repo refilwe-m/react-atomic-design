@@ -1,5 +1,3 @@
-import React from "react";
-
 import { ProfilePanel } from "..";
 
 export const ProfilePage = () => {
@@ -8,4 +6,3 @@ export const ProfilePage = () => {
       <ProfilePanel />
     </section>
   );
-};
