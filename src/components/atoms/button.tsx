@@ -32,8 +32,12 @@ export const Button = ({
   }
 
   return (
-    <button onClick={onClick}
-      className={`flex gap-2 justify-center items-center ${className || ""} ${btnStyles}`}
+    <button
+      onClick={onClick}
+      type="submit"
+      className={`flex gap-2 justify-center items-center ${
+        className || ""
+      } ${btnStyles}`}
     >
       {icon && (
         <span className="text-white" id="icon">

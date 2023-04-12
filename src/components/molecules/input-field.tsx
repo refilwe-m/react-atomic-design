@@ -1,5 +1,5 @@
 import React from "react";
-import { useFormik } from "formik";
+import { useFormik, useField } from "formik";
 
 import { InputProps } from "../atoms/types";
 import { ErrorText } from "../../components";
@@ -9,6 +9,8 @@ export const InputField = ({ placeholder, color, ...props }: InputProps) => {
   styles = props.label
     ? "bg-transparent border-2 border-gray-300"
     : "border-none";
+
+  const [field, meta] = useField(props.name);
 
   const formik = useFormik({
     initialValues: {
@@ -27,9 +29,7 @@ export const InputField = ({ placeholder, color, ...props }: InputProps) => {
         </label>
       )}
       <input
-        id="my-input"
-        onChange={formik.handleChange}
-        value={formik.values.inputData}
+        {...field}
         type={props.type || "text"}
         className={`text-${color} w-96 rounded-lg py-2 px-3 placeholder:text-center placeholder:font-extrabold placeholder:text-gray-500 ${styles} ${props.className}}`}
         placeholder={props.label ? "" : placeholder}

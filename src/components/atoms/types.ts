@@ -25,7 +25,7 @@ export type ButtonProps = {
   icon?: ReactNode | string;
   variant?: "container" | "outline" | "text";
   func?: "edit" | "delete" | "add";
-  onClick?: () => void;
+  onClick?: (T: any) => void;
 };
 
 export type InputProps = {
@@ -35,6 +35,7 @@ export type InputProps = {
   className?: string;
   hasError?: boolean;
   type?: string;
+  name: string;
 };
 
 export type AuthPanelProps = {

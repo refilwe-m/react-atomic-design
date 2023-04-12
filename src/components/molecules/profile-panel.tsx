@@ -4,7 +4,6 @@ import { Avatar, Button, Panel } from "..";
 import { ProfileProps } from "./types";
 
 export const ProfilePanel = () => {
-  
   const userProfile: ProfileProps = {
     Status: "Active",
     Address: "1234 Main St, New York, NY 10001",
@@ -50,12 +49,12 @@ export const ProfilePanel = () => {
         <section className="w-[50%] flex justify-between">
           <section className="profile-panel__details flex flex-col gap-1">
             {getKeys(userProfile).map((title) => {
-              return <h1>{title}</h1>;
+              return <h1 key={title}>{title}</h1>;
             })}
           </section>
           <section className="profile-panel__details flex flex-col gap-1">
-            {getValues(userProfile).map((value) => {
-              return <h1>{value}</h1>;
+            {getValues(userProfile).map((value, key) => {
+              return <h1 key={key}>{value}</h1>;
             })}
           </section>
         </section>
