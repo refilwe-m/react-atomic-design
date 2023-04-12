@@ -26,3 +26,4 @@ export const FormPage = () => {
       </form>
     </Panel>
   );
+};
