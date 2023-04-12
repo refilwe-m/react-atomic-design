@@ -8,6 +8,7 @@ export const Button = ({
   icon,
   variant = "container",
   func = "edit",
+  onClick,
 }: ButtonProps) => {
   let btnStyles: string = "";
 
@@ -31,7 +32,7 @@ export const Button = ({
   }
 
   return (
-    <button
+    <button onClick={onClick}
       className={`flex gap-2 justify-center items-center ${className || ""} ${btnStyles}`}
     >
       {icon && (
