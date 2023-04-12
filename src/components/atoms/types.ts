@@ -25,7 +25,7 @@ export type ButtonProps = {
   icon?: ReactNode | string;
   variant?: "container" | "outline" | "text";
   func?: "edit" | "delete" | "add";
-  onClick?: () => {};
+  onClick?: () => void;
 };
 
 export type InputProps = {
