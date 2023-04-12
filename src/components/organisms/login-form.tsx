@@ -38,16 +38,15 @@ export const LoginForm = () => {
                 color="text-gray-600"
                 placeholder="Password"
                 type="password"
-                className="mb-2"
               />
-              <section className="flex justify-between text-xs">
+              <section className="flex justify-between text-xs mt-2">
                 <label className="text-white" htmlFor="remember-me">
                   <input className="mr-3" name="remember-me" type="checkbox" />
                   Keep me signed in
                 </label>
                 <Button
                   onClick={() => navigate("/register")}
-                  className="text-blue-700 hover:text-blue-500 text-xs"
+                  className="text-xs"
                   variant="text"
                   text="Forgot Password?"
                 />
@@ -55,7 +54,7 @@ export const LoginForm = () => {
             </section>
 
             <Button
-              className="w-60 text-3xl hover:bg-green-700"
+              className="w-60 text-3xl"
               text="Login"
               onClick={(e) => {
                 e.preventDefault();

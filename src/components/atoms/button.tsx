@@ -15,7 +15,7 @@ export const Button = ({
   switch (variant) {
     case "container":
       btnStyles =
-        "bg-green-500 rounded-md text-white inline-block text-xs font-medium self-center px-6 py-2";
+        "bg-green-500 hover:bg-green-700 rounded-md text-white inline-block text-xs font-medium self-center px-6 py-2";
       break;
     case "outline":
       btnStyles =
@@ -24,11 +24,12 @@ export const Button = ({
           : "bg-indigo-500 inline-block rounded-md text-white";
       break;
     case "text":
-      btnStyles = "inline-block font-medium text-sm leading-tight text-white";
+      btnStyles =
+        "text-blue-700 hover:text-blue-500 inline-block font-medium text-sm leading-tight";
       break;
     default:
       btnStyles =
-        "bg-green-500 rounded-md text-white inline-block text-xs font-medium self-center";
+        "bg-green-500 hover:bg-green-700 rounded-md text-white inline-block text-xs font-medium self-center";
   }
 
   return (
