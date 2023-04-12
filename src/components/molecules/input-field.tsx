@@ -1,5 +1,5 @@
 import React from "react";
-import { useFormik, useField } from "formik";
+import { useField } from "formik";
 
 import { InputProps } from "../atoms/types";
 import { ErrorText } from "../../components";
@@ -10,21 +10,12 @@ export const InputField = ({ placeholder, color, ...props }: InputProps) => {
     ? "bg-transparent border-2 border-gray-300"
     : "border-none";
 
-  const [field, meta] = useField(props.name);
-
-  const formik = useFormik({
-    initialValues: {
-      inputData: "",
-    },
-    onSubmit: (values) => {
-      console.log(values);
-    },
-  });
+  const [field] = useField(props.name);
 
   return (
     <section className="flex flex-col gap-2">
       {props.label && (
-        <label className="text-white mb-1 pl-1" htmlFor="my-input">
+        <label className="text-white mb-1 pl-1" htmlFor={props.name}>
           {props.label}
         </label>
       )}
