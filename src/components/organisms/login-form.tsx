@@ -1,16 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Formik } from "formik";
 
 import { AuthPanel, Button, InputField, Header } from "..";
-import { Formik } from "formik";
+import { FormValues } from "./types";
 
 export const LoginForm = () => {
   const navigate = useNavigate();
-
-  type FormValues = {
-    username: string;
-    password: string;
-  };
 
   const submit = (values: FormValues) => {
     console.log("Submitted:", values);
