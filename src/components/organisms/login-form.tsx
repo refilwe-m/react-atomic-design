@@ -9,7 +9,7 @@ export const LoginForm = () => {
   return (
     <AuthPanel className="p-12">
       <Header
-        className="text-3xl font-extrabold text-white my-8 text-center font-momo"
+        className="text-3xl font-extrabold text-white my-8 text-center font-mono"
         title="Codehesion Rockets"
       />
       <form className="text-black flex flex-col items-center justify-center gap-8">

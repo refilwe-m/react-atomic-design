@@ -5,6 +5,7 @@ import {
   AuthLayout,
   FormPage,
   LoginPage,
+  ProfilePage,
   RegisterPage,
   ReportPage,
 } from "../components";
@@ -25,7 +26,7 @@ export const AppRouter = () => {
           />
           <Route
             path="profile"
-            element={<AppLayout children={<RegisterPage />} />}
+            element={<AppLayout children={<ProfilePage />} />}
           />
           <Route path="form" element={<AppLayout children={<FormPage />} />} />
           <Route
