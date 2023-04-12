@@ -35,7 +35,15 @@ export const AppRouter = () => {
           />
           <Route
             path="*"
-            element={<AppLayout children={<h1>Oops Page doesn't exist</h1>} />}
+            element={
+              <AppLayout
+                children={
+                  <h1 className="text-3xl text-white">
+                    Oops Page doesn't exist
+                  </h1>
+                }
+              />
+            }
           />
         </Route>
         path=""
