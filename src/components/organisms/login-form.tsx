@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
-import { z } from "zod";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 
 import { AuthPanel, Button, InputField, Header } from "..";
 import { FormValues } from "./types";
+import { loginSchema } from "../../schemas";
 
 export const LoginForm = () => {
   const navigate = useNavigate();
@@ -19,11 +19,6 @@ export const LoginForm = () => {
     password: "",
   };
 
-  const schema = z.object({
-    username: z.string().email(),
-    password: z.string().min(8).regex(/[A-Z]/g).regex(/[\W_]/),
-  });
-
   return (
     <AuthPanel className="p-12">
       <Header
@@ -33,7 +28,7 @@ export const LoginForm = () => {
       <Formik
         initialValues={initialValues}
         onSubmit={submit}
-        validationSchema={toFormikValidationSchema(schema)}
+        validationSchema={toFormikValidationSchema(loginSchema)}
       >
         {({ values, errors }) => (
           <form className="text-black flex flex-col items-center justify-center gap-8">
