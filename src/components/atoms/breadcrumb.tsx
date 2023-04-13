@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
-export const breadcrumb = () => {
-  return (
-    <div>breadcrumb</div>
-  )
-}
+export const Breadcrumb = () => {
+  return <div>breadcrumb</div>;
+};
