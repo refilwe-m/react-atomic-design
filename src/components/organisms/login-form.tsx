@@ -25,7 +25,7 @@ export const LoginForm = () => {
       .string()
       .min(8, "Must be at least 8 characters long")
       .regex(/[A-Z]/g, "Must contain an uppercase letter")
-      .regex(/[W_]/, "Must contain a special character"),
+      .regex(/[\W_]/, "Must contain a special character"),
   });
 
   return (

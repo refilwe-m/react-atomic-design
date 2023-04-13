@@ -23,18 +23,12 @@ export const RegisterForm = () => {
         .string()
         .min(8)
         .regex(/[A-Z]/g, "Must contain an uppercase letter")
-        .regex(
-          /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g,
-          "Must contain a special character"
-        ),
+        .regex(/[\W_]/g, "Must contain a special character"),
       confirmPassword: z
         .string()
         .min(8)
         .regex(/[A-Z]/g, "Must contain an uppercase letter")
-        .regex(
-          /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g,
-          "Must contain a special character"
-        ),
+        .regex(/[\W_]/g, "Must contain a special character"),
     })
     .refine((data) => data.password === data.confirmPassword, {
       message: "Passwords do not match",
@@ -101,8 +95,7 @@ export const RegisterForm = () => {
               onClick={(e) => {
                 e.preventDefault();
                 submit(values);
-                console.log("Errors:", errors);
-                if (submitEnabled) {
+                if (Object.keys(errors).length == 0) {
                   navigate("/login");
                 }
               }}
