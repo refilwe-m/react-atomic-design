@@ -21,11 +21,7 @@ export const LoginForm = () => {
 
   const schema = z.object({
     username: z.string().email(),
-    password: z
-      .string()
-      .min(8, "Must be at least 8 characters long")
-      .regex(/[A-Z]/g, "Must contain an uppercase letter")
-      .regex(/[\W_]/, "Must contain a special character"),
+    password: z.string().min(8).regex(/[A-Z]/g).regex(/[\W_]/),
   });
 
   return (
