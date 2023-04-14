@@ -1,28 +1,26 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
-import { z } from "zod";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 
 import { AuthPanel, Button, InputField, Header } from "..";
 import { FormValues } from "./types";
+import { loginSchema } from "../../schemas";
+import { TokenActions, UserService } from "../../services";
 
 export const LoginForm = () => {
   const navigate = useNavigate();
 
-  const submit = (values: FormValues) => {
-    console.log("Logged In:", values);
+  const submit = async () => {
+    const { data } = await UserService.login();
+    const { access_token } = data;
+    TokenActions.set(access_token);
   };
 
   const initialValues: FormValues = {
     username: "",
     password: "",
   };
-
-  const schema = z.object({
-    username: z.string().email(),
-    password: z.string().min(8).regex(/[A-Z]/g).regex(/[\W_]/),
-  });
 
   return (
     <AuthPanel className="p-12">
@@ -33,7 +31,7 @@ export const LoginForm = () => {
       <Formik
         initialValues={initialValues}
         onSubmit={submit}
-        validationSchema={toFormikValidationSchema(schema)}
+        validationSchema={toFormikValidationSchema(loginSchema)}
       >
         {({ values, errors }) => (
           <form className="text-black flex flex-col items-center justify-center gap-8">
@@ -73,7 +71,7 @@ export const LoginForm = () => {
               text="Login"
               onClick={(e) => {
                 e.preventDefault();
-                submit(values);
+                submit();
                 if (Object.keys(errors).length === 0) navigate("/profile");
               }}
             />

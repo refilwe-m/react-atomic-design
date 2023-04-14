@@ -4,3 +4,4 @@ export * from "./user-panel";
 export * from "./input-field";
 export * from "./job-panel";
 export * from "./profile-panel";
+export * from "./popup-modal";

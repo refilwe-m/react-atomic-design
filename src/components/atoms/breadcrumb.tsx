@@ -21,4 +21,4 @@ export const Breadcrumb = () => {
       <ul className="flex gap-10">{listItems}</ul>
     </section>
   );
-};
+  

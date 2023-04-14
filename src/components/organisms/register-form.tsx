@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { Formik, FormikValues } from "formik";
-import { z } from "zod";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 
 import { AuthPanel, Button, Header, InputField } from "..";
 import { FormValues } from "./types";
+import { registerSchema } from "../../schemas";
+import { UserService } from "../../services";
 
 export const RegisterForm = () => {
   const [submitEnabled, setSubmitEnabled] = useState(false);
@@ -16,27 +17,11 @@ export const RegisterForm = () => {
     confirmPassword: "",
   };
 
-  const schema = z
-    .object({
-      username: z.string().email(),
-      password: z
-        .string()
-        .min(8)
-        .regex(/[A-Z]/g, "Must contain an uppercase letter")
-        .regex(/[\W_]/g, "Must contain a special character"),
-      confirmPassword: z
-        .string()
-        .min(8)
-        .regex(/[A-Z]/g, "Must contain an uppercase letter")
-        .regex(/[\W_]/g, "Must contain a special character"),
-    })
-    .refine((data) => data.password === data.confirmPassword, {
-      message: "Passwords do not match",
-      path: ["confirmPassword"],
-    });
-
-  const submit = (values: FormValues) => {
-    console.log("Registered:", values);
+  const submit = async (values: FormValues) => {
+    //call register api [POST]
+    const {data} = await UserService.register(values);
+    console.table(data);
+    //To-Do: Acknowledge success or failure
   };
 
   return (
@@ -48,7 +33,7 @@ export const RegisterForm = () => {
       <Formik
         initialValues={initialValues}
         onSubmit={submit}
-        validationSchema={toFormikValidationSchema(schema)}
+        validationSchema={toFormikValidationSchema(registerSchema)}
       >
         {({ values, errors }) => (
           <form className="text-black flex flex-col items-center justify-center gap-8">
