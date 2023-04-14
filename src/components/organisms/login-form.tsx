@@ -6,12 +6,15 @@ import { toFormikValidationSchema } from "zod-formik-adapter";
 import { AuthPanel, Button, InputField, Header } from "..";
 import { FormValues } from "./types";
 import { loginSchema } from "../../schemas";
+import { TokenActions, UserService } from "../../services";
 
 export const LoginForm = () => {
   const navigate = useNavigate();
 
-  const submit = (values: FormValues) => {
-    console.log("Logged In:", values);
+  const submit = async () => {
+    const { data } = await UserService.login();
+    const { access_token } = data;
+    TokenActions.set(access_token);
   };
 
   const initialValues: FormValues = {
@@ -68,7 +71,7 @@ export const LoginForm = () => {
               text="Login"
               onClick={(e) => {
                 e.preventDefault();
-                submit(values);
+                submit();
                 if (Object.keys(errors).length === 0) navigate("/profile");
               }}
             />

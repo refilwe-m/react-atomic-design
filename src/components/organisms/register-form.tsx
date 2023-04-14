@@ -6,6 +6,7 @@ import { toFormikValidationSchema } from "zod-formik-adapter";
 import { AuthPanel, Button, Header, InputField } from "..";
 import { FormValues } from "./types";
 import { registerSchema } from "../../schemas";
+import { UserService } from "../../services";
 
 export const RegisterForm = () => {
   const [submitEnabled, setSubmitEnabled] = useState(false);
@@ -16,8 +17,11 @@ export const RegisterForm = () => {
     confirmPassword: "",
   };
 
-  const submit = (values: FormValues) => {
-    console.log("Registered:", values);
+  const submit = async (values: FormValues) => {
+    //call register api [POST]
+    const {data} = await UserService.register(values);
+    console.table(data);
+    //To-Do: Acknowledge success or failure
   };
 
   return (

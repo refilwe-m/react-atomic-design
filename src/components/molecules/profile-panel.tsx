@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Avatar, Button, Panel } from "..";
 import { ProfileProps } from "./types";
+import { ProfileService } from "../../services/sub-services/profile-service";
 
 export const ProfilePanel = () => {
+  const [email, setEmail] = useState("");
+  const [id, setId] = useState("");
+
   const userProfile: ProfileProps = {
+    ID: id,
     Status: "Active",
     Address: "1234 Main St, New York, NY 10001",
     Phone: "012-345-6789",
-    Email: "jane@codehesion.co.za",
+    Email: email,
   };
+
+  const userData = async () => {
+    const { data } = await ProfileService.profile();
+    return data;
+  };
+
+  userData().then(({ email, id }) => {
+    setEmail(email);
+    setId(id);
+  });
 
   const getValues = (obj: ProfileProps) => {
     return Object.values(obj);
@@ -46,7 +61,7 @@ export const ProfilePanel = () => {
           </section>
         </section>
 
-        <section className="w-[50%] flex justify-between">
+        <section className="w-[50%] flex justify-between text-sm">
           <section className="profile-panel__details flex flex-col gap-1">
             {getKeys(userProfile).map((title) => {
               return <h1 key={title}>{title}</h1>;
@@ -54,7 +69,16 @@ export const ProfilePanel = () => {
           </section>
           <section className="profile-panel__details flex flex-col gap-1">
             {getValues(userProfile).map((value, key) => {
-              return <h1 key={key}>{value}</h1>;
+              return (
+                <h1
+                  className={
+                    ((key == 0 || key == 4) && "text-yellow-500") || ""
+                  }
+                  key={key}
+                >
+                  {value}
+                </h1>
+              );
             })}
           </section>
         </section>
