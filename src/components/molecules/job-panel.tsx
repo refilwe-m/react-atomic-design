@@ -1,21 +1,16 @@
 import React from "react";
 
 import { Panel } from "../atoms/panel";
+import { JobPanelProps } from "./types";
 
-export const JobPanel = ({ className }: { className: string }) => {
-  const jobs = [
-    "Clock in time",
-    "Clock out time",
-    "Clock in location",
-    "Clock out location",
-  ];
+export const JobPanel = ({ className, jobs }: JobPanelProps) => {
   return (
     <Panel className={`${className}`}>
       <h1 className="mb-4">Jobs</h1>
       <ul className="list-disc">
         {jobs.map((job, index) => (
           <li className="marker:text-[#5351d5] pb-5" key={index}>
-            {job}
+            {job.clock}
           </li>
         ))}
       </ul>

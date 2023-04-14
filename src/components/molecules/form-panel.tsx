@@ -1,8 +1,9 @@
 import React from "react";
 
 import { Panel } from "../atoms/panel";
+import { FormPanelProps } from "./types";
 
-export const FormPanel = () => {
+export const FormPanel = ({ name, description }: FormPanelProps) => {
   return (
     <Panel>
       <section className="form-panel">
@@ -12,14 +13,14 @@ export const FormPanel = () => {
               className="pr-3 mr-2 bg-dark-panel-sub-bg border-white-1"
               type="checkbox"
             />
-            <label className="text-white ml-2">Title</label>
+            <label className="text-white ml-2">{name || "Title"}</label>
           </section>
           <input
             className="border-none text-xs bg-transparent ml-8 text-white"
             placeholder="Description"
             name="description"
             id="description"
-            value="Description"
+            value={description || "Description"}
           />
         </form>
       </section>

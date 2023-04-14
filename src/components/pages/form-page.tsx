@@ -1,13 +1,35 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { FiPlus } from "react-icons/fi";
 
 import { Button, FormPanel, Panel } from "..";
+import { ProfileService } from "../../services/sub-services/profile-service";
+import { FormPanelProps } from "../molecules/types";
 
 export const FormPage = () => {
-  const forms: ReactNode[] = [];
+  const initialForms: ReactNode[] = [];
+
+  const mapForms = () => {};
+
   for (let i = 0; i < 20; i++) {
-    forms.push(<FormPanel />);
+    initialForms.push(<FormPanel />);
   }
+
+  const [forms, setForms] = useState<ReactNode[]>(initialForms);
+
+  const getForms = async () => {
+    const { data } = await ProfileService.forms();
+    return data?.forms;
+  };
+
+  useEffect(() => {
+    getForms().then((forms) => {
+      setForms(
+        forms.map(({ name, description }: FormPanelProps) => (
+          <FormPanel name={name} description={description} />
+        ))
+      );
+    });
+  }, []);
 
   return (
     <Panel>

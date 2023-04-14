@@ -1,4 +1,5 @@
 export * from "./auth-panel";
+export * from "./breadcrumb";
 export * from "./button";
 export * from "./header";
 export * from "./error-text";
