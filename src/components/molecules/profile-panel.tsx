@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Avatar, Button, Panel } from "..";
+import { Avatar, Button, Panel, Modal } from "..";
 import { ProfileProps } from "./types";
 import { ProfileService } from "../../services/sub-services/profile-service";
 
@@ -33,6 +33,7 @@ export const ProfilePanel = () => {
   const getKeys = (obj: ProfileProps) => {
     return Object.keys(obj);
   };
+
   return (
     <Panel className="w-full" title="Technician's Profile">
       <section className="profile-panel flex">
@@ -50,12 +51,7 @@ export const ProfilePanel = () => {
                   variant="outline"
                   text="Edit"
                 />
-                <Button
-                  className="px-5 w-16 text-xs"
-                  variant="outline"
-                  text="Delete"
-                  func="delete"
-                />
+                <Modal />
               </section>
             </section>
           </section>
