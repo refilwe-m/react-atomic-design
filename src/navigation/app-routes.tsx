@@ -28,8 +28,8 @@ export const AppRouter = () => {
             path="profile"
             element={<AppLayout children={<ProfilePage />} />}
           >
+            <Route path="form/*" element={<FormPage />} />
             <Route path="report" element={<ReportPage />} />
-            <Route path="form" element={<FormPage />} />
           </Route>
 
           <Route
