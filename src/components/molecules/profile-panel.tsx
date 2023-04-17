@@ -35,7 +35,7 @@ export const ProfilePanel = () => {
   };
 
   return (
-    <Panel className="w-full" title="Technician's Profile">
+    <Panel className="mb-6" title="Technician's Profile">
       <section className="profile-panel flex">
         <section className="profile-panel-avatar flex gap-4 w-[50%]">
           <Avatar className="" imgSrc="https://picsum.photos/100" />

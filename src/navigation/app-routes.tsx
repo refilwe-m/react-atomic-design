@@ -27,12 +27,11 @@ export const AppRouter = () => {
           <Route
             path="profile"
             element={<AppLayout children={<ProfilePage />} />}
-          />
-          <Route path="form" element={<AppLayout children={<FormPage />} />} />
-          <Route
-            path="report"
-            element={<AppLayout children={<ReportPage />} />}
-          />
+          >
+            <Route path="report" element={<ReportPage />} />
+            <Route path="form" element={<FormPage />} />
+          </Route>
+
           <Route
             path="*"
             element={
