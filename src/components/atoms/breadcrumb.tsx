@@ -7,8 +7,9 @@ export const Breadcrumb = () => {
   const currentPath = url.pathname;
   const routes = ["/login", "/register", "/profile", "/form", "/report"];
 
-  const listItems = routes.map((route) => (
+  const listItems = routes.map((route, i) => (
     <li
+      key={i}
       className={` ${
         route == currentPath && "text-blue-700 font-semibold"
       } flex items-center hover:text-blue-400`}
