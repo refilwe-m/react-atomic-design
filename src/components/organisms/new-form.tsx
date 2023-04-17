@@ -23,12 +23,14 @@ export const SideForm = ({ isOpen, onClose }: SideFormProps) => {
         {({ values }) => (
           <form className="flex flex-col gap-11">
             <InputField
+              label="Title"
               type="text"
               name="title"
               placeholder="Title"
               color="black"
             />
             <InputField
+              label="Description"
               type="text"
               name="description"
               placeholder="Description"
