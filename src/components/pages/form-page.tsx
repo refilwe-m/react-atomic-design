@@ -44,7 +44,7 @@ export const FormPage = () => {
       </header>
       <form action="">
         <p className="text-sm my-3">Forms assigned</p>
-        <section className="grid grid-cols-5">{forms}</section>
+        <section className="grid grid-cols-5 gap-3">{forms}</section>
       </form>
     </Panel>
   );
