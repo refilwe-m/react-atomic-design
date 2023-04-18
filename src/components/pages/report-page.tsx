@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import { UserPanel, JobPanel, Panel, ClockPanel } from "..";
+import { UserPanel, JobPanel, ClockPanel, Button, TableJobPanel } from "..";
 import { ProfileService } from "../../services/sub-services/profile-service";
-import { JobProps, UserPanelProps, UserProps } from "../molecules/types";
+import { UserProps } from "../molecules/types";
 
 export const ReportPage = () => {
   const [userDetails, setUserDetails] = useState<UserProps>({
@@ -11,11 +11,14 @@ export const ReportPage = () => {
     email: "",
     profile: "",
   });
+
   const [clockDetails, setClockDetails] = useState({
     time: "",
     sync: false,
   });
   const [jobs, setJobs] = useState([]);
+
+  const [isList, setIsList] = useState(true);
 
   const getReports = async () => {
     return await ProfileService.report();
@@ -38,7 +41,20 @@ export const ReportPage = () => {
         sync={clockDetails.sync}
         className="pl-7"
       />
-      <JobPanel jobs={jobs} className="pl-9" />
+      <section className="view-type flex gap-6">
+        <Button
+          variant="text"
+          text="List"
+          className="underline"
+          onClick={() => setIsList(true)}
+        />
+        <Button variant="text" text="Table" onClick={() => setIsList(false)} />
+      </section>
+      {isList ? (
+        <JobPanel jobs={jobs} className="pl-9" />
+      ) : (
+        <TableJobPanel jobs={jobs} />
+      )}
     </section>
   );
 };
