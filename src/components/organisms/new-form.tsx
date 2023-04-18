@@ -16,28 +16,25 @@ export const SideForm = ({ isOpen, onClose }: SideFormProps) => {
         isOpen ? "translate-x-0" : "translate-x-full"
       } sm:w-full sm:max-w-md`}
     >
-      <Formik
-        initialValues={{ title: "Title", description: "Description" }}
-        onSubmit={onClose}
-      >
+      <Formik initialValues={{ title: "", description: "" }} onSubmit={onClose}>
         {({ values }) => (
           <form className="flex flex-col gap-11">
             <InputField
-              label="Title"
+              label="Form Title"
               type="text"
               name="title"
               placeholder="Title"
-              color="black"
+              color="white"
             />
             <InputField
-              label="Description"
+              label="Form Description"
               type="text"
               name="description"
               placeholder="Description"
-              color="black"
+              color="white"
             />
 
-            <Button className="self-center w-14" text="Add" onClick={onClose} />
+            <Button className="self-center w-56" text="Add" onClick={onClose} />
           </form>
         )}
       </Formik>
