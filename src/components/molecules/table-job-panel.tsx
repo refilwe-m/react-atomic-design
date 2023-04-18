@@ -33,10 +33,10 @@ export const TableJobPanel = ({ className, jobs }: JobPanelProps) => {
 
   return (
     <Panel className="table-job-panel">
-      <table className="w-full">
+      <table className="w-full space-y-3">
         <thead className="border border-transparent border-b-gray-600">
           {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
+            <tr className="mb-4" key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th key={header.id}>
                   {header.isPlaceholder
@@ -50,11 +50,14 @@ export const TableJobPanel = ({ className, jobs }: JobPanelProps) => {
             </tr>
           ))}
         </thead>
-        <tbody>
-          {table.getRowModel().rows.map((row) => (
-            <tr key={row.id}>
-              {row.getVisibleCells().map((cell) => (
-                <td key={cell.id}>
+        <tbody className="">
+          {table.getRowModel().rows.map((row, i) => (
+            <tr className={`${i % 2 != 0 ? "bg-gray-600 " : ""}`} key={row.id}>
+              {row.getVisibleCells().map((cell, c) => (
+                <td
+                  key={cell.id}
+                  className={`${c == 0 ? "rounded-s-lg" : "rounded-e-lg"}`}
+                >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}

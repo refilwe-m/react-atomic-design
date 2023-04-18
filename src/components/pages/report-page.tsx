@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Switch } from "@headlessui/react";
 
 import { UserPanel, JobPanel, ClockPanel, Button, TableJobPanel } from "..";
 import { ProfileService } from "../../services/sub-services/profile-service";
@@ -42,23 +43,23 @@ export const ReportPage = () => {
         className="pl-7"
       />
       <section className="view-type flex gap-6">
-        <Button
-          variant="text"
-          text="List"
+        <p className="text-white">List View</p>
+        <Switch
+          checked={isList}
+          onChange={() => setIsList(!isList)}
           className={`${
-            isList ? "text-blue-500 underline underline-yellow-500" : ""
-          }`}
-          onClick={() => setIsList(true)}
-        />
-        <Button
-          variant="text"
-          text="Table"
-          className={`${
-            isList ? "" : "text-blue-500 underline underline-yellow-500"
-          }`}
-          onClick={() => setIsList(false)}
-        />
+            isList ? "bg-blue-600" : "bg-gray-200"
+          } relative inline-flex h-6 w-11 items-center rounded-full`}
+        >
+          <span className="sr-only">Enable notifications</span>
+          <span
+            className={`${
+              isList ? "translate-x-6" : "translate-x-1"
+            } inline-block h-4 w-4 transform rounded-full bg-white transition`}
+          />
+        </Switch>
       </section>
+
       {isList ? (
         <JobPanel jobs={jobs} className="pl-9" />
       ) : (
