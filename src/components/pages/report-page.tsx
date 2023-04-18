@@ -45,10 +45,19 @@ export const ReportPage = () => {
         <Button
           variant="text"
           text="List"
-          className="underline"
+          className={`${
+            isList ? "text-blue-500 underline underline-yellow-500" : ""
+          }`}
           onClick={() => setIsList(true)}
         />
-        <Button variant="text" text="Table" onClick={() => setIsList(false)} />
+        <Button
+          variant="text"
+          text="Table"
+          className={`${
+            isList ? "" : "text-blue-500 underline underline-yellow-500"
+          }`}
+          onClick={() => setIsList(false)}
+        />
       </section>
       {isList ? (
         <JobPanel jobs={jobs} className="pl-9" />
