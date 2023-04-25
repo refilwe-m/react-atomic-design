@@ -1,7 +1,6 @@
 import React from "react";
 import {
   useReactTable,
-  ColumnDef,
   createColumnHelper,
   getCoreRowModel,
   flexRender,
@@ -52,11 +51,11 @@ export const TableJobPanel = ({ className, jobs }: JobPanelProps) => {
         </thead>
         <tbody className="">
           {table.getRowModel().rows.map((row, i) => (
-            <tr className={`${i % 2 != 0 ? "bg-gray-600 " : ""}`} key={row.id}>
+            <tr className="even:bg-gray-600" key={row.id}>
               {row.getVisibleCells().map((cell, c) => (
                 <td
                   key={cell.id}
-                  className={`${c == 0 ? "rounded-s-lg" : "rounded-e-lg"}`}
+                  className="even:rounded-s-lg odd:rounded-e-lg"
                 >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
