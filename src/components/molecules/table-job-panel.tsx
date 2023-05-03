@@ -55,7 +55,7 @@ export const TableJobPanel = ({ className, jobs }: JobPanelProps) => {
               {row.getVisibleCells().map((cell, c) => (
                 <td
                   key={cell.id}
-                  className="even:rounded-s-lg odd:rounded-e-lg"
+                  className="odd:rounded-s-lg even:rounded-e-lg"
                 >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
