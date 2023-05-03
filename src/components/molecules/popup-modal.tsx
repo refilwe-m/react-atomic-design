@@ -26,16 +26,16 @@ export const Modal = () => {
       >
         <section className="fixed inset-0 flex items-center justify-center p-4">
           <Dialog.Panel>
-            <Panel className="bg-white text-gray-500 w-full max-w-sm rounded flex flex-col gap-6">
+            <Panel className="bg-white w-full max-w-sm rounded flex flex-col gap-6">
               <Dialog.Title className="text-red-500 text-xl font-bold my-2 font-mono">
                 Deleting account
               </Dialog.Title>
 
-              <Dialog.Description>
+              <Dialog.Description className="text-gray-500">
                 This will permanently delete your account
               </Dialog.Description>
 
-              <p className="my-2">
+              <p className="my-2 text-gray-500">
                 Are you sure you want to delete your profile? All of your data
                 will be permanently removed. This action cannot be undone.
               </p>
