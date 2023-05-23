@@ -1042,6 +1042,11 @@
   "resolved" "https://registry.npmjs.org/@esbuild/darwin-x64/-/darwin-x64-0.17.15.tgz"
   "version" "0.17.15"
 
+"@faker-js/faker@^8.0.1":
+  "integrity" "sha512-kbh5MenpTN9U0B4QcOI1NoTPlZHniSYQ3BHbhAnPjJGAmmFqxoxTE4sGdpy7ZOO9038DPGCuhXyMkjOr05uVwA=="
+  "resolved" "https://registry.npmjs.org/@faker-js/faker/-/faker-8.0.1.tgz"
+  "version" "8.0.1"
+
 "@fal-works/esbuild-plugin-global-externals@^2.1.2":
   "integrity" "sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ=="
   "resolved" "https://registry.npmjs.org/@fal-works/esbuild-plugin-global-externals/-/esbuild-plugin-global-externals-2.1.2.tgz"
@@ -4106,6 +4111,11 @@
   "version" "1.0.3"
   dependencies:
     "function-bind" "^1.1.1"
+
+"heroicons@^2.0.18":
+  "integrity" "sha512-3iaqznaz5GJ8Mox/eDfKHo7tYKuPiZV4vbg6pB6wjJhBa7ZKQlXT1KuUnsjkEiPy/ezyiqppOX6wUqYguMIq8w=="
+  "resolved" "https://registry.npmjs.org/heroicons/-/heroicons-2.0.18.tgz"
+  "version" "2.0.18"
 
 "hoist-non-react-statics@^3.3.0", "hoist-non-react-statics@^3.3.2":
   "integrity" "sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw=="

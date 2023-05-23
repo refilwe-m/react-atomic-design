@@ -6,6 +6,7 @@ import { ProfileService } from "../../services/sub-services/profile-service";
 import { FormPanelProps } from "../molecules/types";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { SideForm } from "../organisms/new-form";
+import { ExpandableTable } from "../molecules/expandable-table";
 
 export const FormPage = () => {
   const initialForms: ReactNode[] = [];
@@ -41,23 +42,28 @@ export const FormPage = () => {
           element={<SideForm isOpen={true} onClose={() => navigate(".")} />}
         />
       </Routes>
-      <Panel>
-        <header className="flex justify-between">
-          <h1>Forms List</h1>
-          <Link to="new">
-            <Button
-              className="px-2 py-2 text-xs"
-              variant="outline"
-              icon={<FiPlus />}
-              text="Create New"
-            />
-          </Link>
-        </header>
-        <form action="">
-          <p className="text-sm my-3">Forms assigned</p>
-          <section className="grid grid-cols-5 gap-3">{forms}</section>
-        </form>
-      </Panel>
+      <div className="flex flex-col gap-4">
+        <Panel>
+          <header className="flex justify-between">
+            <h1>Forms List</h1>
+            <Link to="new">
+              <Button
+                className="px-2 py-2 text-xs"
+                variant="outline"
+                icon={<FiPlus />}
+                text="Create New"
+              />
+            </Link>
+          </header>
+          <form action="">
+            <p className="text-sm my-3">Forms assigned</p>
+            <section className="grid grid-cols-5 gap-3">{forms}</section>
+          </form>
+        </Panel>
+        <Panel>
+          <ExpandableTable />
+        </Panel>
+      </div>
     </>
   );
 };
