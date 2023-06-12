@@ -1,6 +1,6 @@
 import { Outlet, Route, Routes, useNavigate } from "react-router";
 
-import { ProfilePanel } from "..";
+import { Button, ProfilePanel } from "..";
 import {
   CartesianGrid,
   Legend,
@@ -16,11 +16,15 @@ import {
 } from "recharts";
 
 export const ProfilePage = () => {
-  
-
-
   return (
     <section className="profile-panel flex-col gap-4">
+      <Button
+        variant="outline"
+        text="Book Technician"
+        onClick={() => console.log("Do Scheduler")}
+        func="delete"
+        className="px-2"
+      />
       <ProfilePanel />
       <Outlet />
     </section>
