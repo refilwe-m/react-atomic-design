@@ -37,7 +37,7 @@ export const Nav = () => {
     },
   ];
   return (
-    <nav className="w-full sticky bg-[#191a1f] text-blue-500">
+    <nav className="w-full sticky bg-[#191a1f] text-blue-500 drop-shadow-2xl">
       <ul className="flex justify-between items-center p-3">
         <h2 className="text-2xl font-bold">React Workshop</h2>
         <section className="flex justify-between gap-6">

@@ -2282,6 +2282,11 @@
   resolved "https://registry.npmjs.org/@types/d3-timer/-/d3-timer-3.0.0.tgz"
   integrity sha512-HNB/9GHqu7Fo8AQiugyJbv6ZxYz58wef0esl4Mv828w1ZKpAshw/uFWVDUcIB9KKFeFKoxS3cHY07FFgtTRZ1g==
 
+"@types/date-arithmetic@*":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@types/date-arithmetic/-/date-arithmetic-4.1.2.tgz#8e74e6065dd436eebe1b9a258881d1aff83800aa"
+  integrity sha512-QrXpK5SdmUq76yPpW1p4/4OtjBSaWjK9T03FD/01TRenIkToKBT+bDw2Y8vk/Bmy8jkiuHu6okVHPgHuyiZEqQ==
+
 "@types/detect-port@^1.3.0":
   version "1.3.2"
   resolved "https://registry.npmjs.org/@types/detect-port/-/detect-port-1.3.2.tgz"
@@ -2460,6 +2465,15 @@
   version "1.2.4"
   resolved "https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.4.tgz"
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
+
+"@types/react-big-calendar@^1.6.5":
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/@types/react-big-calendar/-/react-big-calendar-1.6.5.tgz#100db6567fd6354e7a95e59ba1a9e0469f9f842d"
+  integrity sha512-YMcsFVDTnHIBuBC1fzDDsZdFPQSmugQrRSVIE9Ovfg/oVhnnlCCZC195JcwSQM9LvEICnNQlhr6ms9lPZlJr4w==
+  dependencies:
+    "@types/date-arithmetic" "*"
+    "@types/prop-types" "*"
+    "@types/react" "*"
 
 "@types/react-dom@^18.0.11":
   version "18.0.11"
