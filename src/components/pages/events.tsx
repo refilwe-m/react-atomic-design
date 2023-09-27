@@ -1,13 +1,14 @@
 import React from "react";
 import dayjs from "dayjs";
 import moment from "moment";
-import "react-big-calendar/lib/css/react-big-calendar.css";
 import { Calendar, momentLocalizer } from "react-big-calendar";
-
+import "react-big-calendar/lib/css/react-big-calendar.css";
+import "../../styles/calendar.scss";
 import { Event } from "react-big-calendar";
 
 const myEventsList: Event[] = [
   { start: new Date(), end: new Date(), title: "normal event" },
+  { start: new Date(), end: new Date(), title: "clashing event" },
   { start: new Date(), end: new Date("30-09-2023"), title: "special event" },
 ];
 
@@ -20,12 +21,12 @@ export const EventsPage = () => {
         Events Booked
       </h1>
       <Calendar
-        className="text-white bg-slate-900"
+        className="text-white text-xs bg-[#191a1f]"
         localizer={localizer}
         events={myEventsList}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500, color: "white" }}
+        style={{ height: 500 }}
       />
     </div>
   );
