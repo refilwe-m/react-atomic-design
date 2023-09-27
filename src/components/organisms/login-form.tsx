@@ -11,8 +11,14 @@ import { TokenActions, UserService } from "../../services";
 export const LoginForm = () => {
   const navigate = useNavigate();
 
-  const submit = async () => {
-    const { data } = await UserService.login();
+  const submit = async ({
+    username,
+    password,
+  }: {
+    username: string;
+    password: string;
+  }) => {
+    const { data } = await UserService.login({ username, password });
     const { access_token } = data;
     TokenActions.set(access_token);
   };
@@ -71,8 +77,12 @@ export const LoginForm = () => {
               text="Login"
               onClick={(e) => {
                 e.preventDefault();
-                submit();
-                if (Object.keys(errors).length === 0) navigate("/profile");
+                submit({
+                  username: values?.username,
+                  password: values?.password,
+                });
+                if (Object.keys(errors).length === 0 && TokenActions.get())
+                  navigate("/profile");
               }}
             />
           </form>

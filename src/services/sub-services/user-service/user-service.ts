@@ -4,8 +4,8 @@ import { registrationPayload } from "./token-dto";
 import { UserProps } from "./types";
 
 export const UserService = {
-  login: () => {
-    const data = authBody();
+  login: ({ username, password }: { username: string; password: string }) => {
+    const data = authBody({ username, password });
     return openAPI.post(tokenURL, data);
   },
   register: (user: UserProps) => {
