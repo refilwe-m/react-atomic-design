@@ -4,6 +4,7 @@ import {
   AppLayout,
   AttendeesPage,
   AuthLayout,
+  EventsPage,
   FormPage,
   LoginPage,
   ProfilePage,
@@ -25,11 +26,11 @@ export const AppRouter = () => {
           />
           <Route
             path="/my-ip"
-            element={<AuthLayout children={<IPTracker />} />}
+            element={<AppLayout children={<IPTracker />} />}
           />
           <Route
             path="/scanner"
-            element={<AuthLayout children={<QRScanner />} />}
+            element={<AppLayout children={<QRScanner />} />}
           />
           <Route
             path="register"
@@ -38,13 +39,23 @@ export const AppRouter = () => {
           <Route
             path="profile"
             element={<AppLayout children={<ProfilePage />} />}
-          >
-            <Route path="form/*" element={<FormPage />} />
-            <Route path="report" element={<ReportPage />} />
-          </Route>
+          />
+
+          <Route
+            path="form/*"
+            element={<AppLayout children={<FormPage />} />}
+          />
+          <Route
+            path="report"
+            element={<AppLayout children={<ReportPage />} />}
+          />
           <Route
             path="attendees"
             element={<AppLayout children={<AttendeesPage />} />}
+          />
+          <Route
+            path="events"
+            element={<AppLayout children={<EventsPage />} />}
           />
           <Route
             path="*"

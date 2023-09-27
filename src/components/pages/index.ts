@@ -1,4 +1,5 @@
 export * from "./report-page";
+export * from "./events";
 export * from "./form-page";
 export * from "./login-page";
 export * from "./register-page";

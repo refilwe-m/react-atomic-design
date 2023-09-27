@@ -8,3 +8,4 @@ export * from "./avatar";
 export * from "./panel";
 export * from "./graph";
 export * from "./qr-generator";
+export * from "./nav";

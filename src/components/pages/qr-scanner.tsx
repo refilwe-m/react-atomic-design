@@ -9,7 +9,6 @@ export const QRScanner = () => {
       <QrReader
         className="w-1/2 h-1/2"
         onResult={(result, error) => {
-          alert(result);
           if (!!result) {
             setData(result.getText());
           }

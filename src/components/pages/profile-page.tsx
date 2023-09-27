@@ -18,13 +18,6 @@ import {
 export const ProfilePage = () => {
   return (
     <section className="profile-panel flex-col gap-4">
-      <Button
-        variant="outline"
-        text="Book Technician"
-        onClick={() => console.log("Do Scheduler")}
-        func="delete"
-        className="px-2"
-      />
       <ProfilePanel />
       <Outlet />
     </section>
