@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Breadcrumb } from "..";
+import { Breadcrumb } from "@project/components";
 
 export const AuthLayout = ({ children }: { children: ReactNode }) => {
   return (

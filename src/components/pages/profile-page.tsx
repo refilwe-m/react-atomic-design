@@ -1,6 +1,6 @@
 import { Outlet, Route, Routes, useNavigate } from "react-router";
 
-import { ProfilePanel } from "..";
+import { ProfilePanel } from "@project/components";
 
 export const ProfilePage = () => {
   return (

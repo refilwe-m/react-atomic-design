@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Panel } from "../atoms/panel";
+import { Panel } from "@project/components";
 import { FormPanelProps } from "./types";
 
 export const FormPanel = ({ name, description }: FormPanelProps) => {

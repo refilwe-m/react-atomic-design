@@ -1,6 +1,6 @@
 import React from "react";
 
-import { RegisterForm } from "..";
+import { RegisterForm } from "@project/components";
 
 export const RegisterPage = () => {
   return (

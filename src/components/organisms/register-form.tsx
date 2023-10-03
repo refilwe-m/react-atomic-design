@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { Formik, FormikValues } from "formik";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 
-import { AuthPanel, Button, Header, InputField } from "..";
+import { AuthPanel, Button, Header, InputField } from "@project/components";
 import { FormValues } from "./types";
 import { registerSchema } from "../../schemas";
 import { UserService } from "../../services";
@@ -19,7 +19,7 @@ export const RegisterForm = () => {
 
   const submit = async (values: FormValues) => {
     //call register api [POST]
-    const {data} = await UserService.register(values);
+    const { data } = await UserService.register(values);
     console.table(data);
     //To-Do: Acknowledge success or failure
   };

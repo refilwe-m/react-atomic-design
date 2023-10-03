@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { useNavigate } from "react-router";
 
-import { Button, Panel } from "..";
+import { Button, Panel } from "@project/components";
 
 export const Modal = () => {
   const [isOpen, setIsOpen] = useState(false);

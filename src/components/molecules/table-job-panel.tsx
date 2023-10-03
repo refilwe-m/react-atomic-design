@@ -6,7 +6,7 @@ import {
   flexRender,
 } from "@tanstack/react-table";
 
-import { Panel } from "../atoms";
+import { Panel } from "@project/components";
 import { JobPanelProps, JobProps } from "./types";
 
 export const TableJobPanel = ({ className, jobs }: JobPanelProps) => {

@@ -1,12 +1,16 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import { FiPlus } from "react-icons/fi";
 
-import { Button, FormPanel, Panel } from "..";
+import {
+  Button,
+  FormPanel,
+  Panel,
+  ExpandableTable,
+  SideForm,
+} from "@project/components";
 import { ProfileService } from "../../services/sub-services/profile-service";
 import { FormPanelProps } from "../molecules/types";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
-import { SideForm } from "../organisms/new-form";
-import { ExpandableTable } from "../molecules/expandable-table";
 
 export const FormPage = () => {
   const initialForms: ReactNode[] = [];

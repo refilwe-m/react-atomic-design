@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Panel } from "../atoms/panel";
+import { Panel } from "@project/components";
 import { JobPanelProps } from "./types";
 
 export const JobPanel = ({ className, jobs }: JobPanelProps) => {

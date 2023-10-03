@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Avatar, Button, Panel, Modal } from "..";
+import { Avatar, Button, Panel, Modal } from "@project/components";
 import { ProfileProps } from "./types";
 import { ProfileService } from "../../services/sub-services/profile-service";
 

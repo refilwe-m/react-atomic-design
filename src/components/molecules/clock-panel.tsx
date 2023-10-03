@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Panel } from "../atoms/panel";
+import { Panel } from "@project/components";
 import { GiTimeSynchronization } from "react-icons/gi";
 import { ClockPanelProps } from "./types";
 

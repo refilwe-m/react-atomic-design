@@ -1,8 +1,7 @@
 import React from "react";
-
-import { Button, Panel } from "../atoms";
 import { Formik } from "formik";
-import { InputField } from "../molecules";
+
+import { InputField, Button, Panel } from "@project/components";
 
 type SideFormProps = {
   isOpen: boolean;

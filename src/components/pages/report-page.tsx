@@ -5,11 +5,10 @@ import {
   UserPanel,
   JobPanel,
   ClockPanel,
-  Button,
   TableJobPanel,
   Panel,
   Graph,
-} from "..";
+} from "@project/components";
 import { ProfileService } from "../../services/sub-services/profile-service";
 import { UserProps } from "../molecules/types";
 

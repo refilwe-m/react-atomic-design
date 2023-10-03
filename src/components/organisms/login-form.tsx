@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 
-import { AuthPanel, Button, InputField, Header } from "..";
+import { AuthPanel, Button, InputField, Header } from "@project/components";
 import { FormValues } from "./types";
 import { loginSchema } from "../../schemas";
 import { TokenActions, UserService } from "../../services";
