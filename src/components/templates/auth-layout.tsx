@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
-import { Breadcrumb } from "@project/components";
+
+let { Breadcrumb } = await import("@project/components");
 
 export const AuthLayout = ({ children }: { children: ReactNode }) => {
   return (
