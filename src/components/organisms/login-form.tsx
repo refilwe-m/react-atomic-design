@@ -44,7 +44,6 @@ export const LoginForm = () => {
             <InputField
               name="username"
               color="text-black"
-              className="p"
               placeholder="Username"
               hasError={!!errors.username}
               errorMsg={errors.username}
@@ -52,6 +51,7 @@ export const LoginForm = () => {
             <section>
               <InputField
                 name="password"
+                className="password"
                 color="text-gray-600"
                 placeholder="Password"
                 type="password"
@@ -73,7 +73,7 @@ export const LoginForm = () => {
             </section>
 
             <Button
-              className="w-60 text-3xl"
+              className="loginBtn w-60 text-3xl"
               text="Login"
               onClick={(e) => {
                 e.preventDefault();
@@ -81,6 +81,7 @@ export const LoginForm = () => {
                   username: values?.username,
                   password: values?.password,
                 });
+                navigate("/profile");
                 if (Object.keys(errors).length === 0 && TokenActions.get())
                   navigate("/profile");
               }}

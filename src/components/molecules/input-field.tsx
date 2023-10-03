@@ -22,7 +22,7 @@ export const InputField = ({ placeholder, color, ...props }: InputProps) => {
       <input
         {...field}
         type={props.type || "text"}
-        className={`text-${color} w-96 rounded-lg py-2 px-3 placeholder:text-center placeholder:font-extrabold placeholder:text-gray-500 ${styles} ${props.className}}`}
+        className={`${props.name} text-${color} w-96 rounded-lg py-2 px-3 placeholder:text-center placeholder:font-extrabold placeholder:text-gray-500 ${styles} ${props.className}}`}
         placeholder={props.label ? "" : placeholder}
       />
       {props.hasError && (

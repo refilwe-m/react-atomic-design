@@ -42,7 +42,12 @@ export const Nav = () => {
         <h2 className="text-2xl font-bold">React Workshop</h2>
         <section className="flex justify-between gap-6">
           {navLinks.map((link) => (
-            <NavLink to={link.path} className="text-xs hover:text-blue-300">
+            <NavLink
+              to={link.path}
+              className={`${link.name
+                .replace(" ", "")
+                .toLowerCase()} text-xs hover:text-blue-300`}
+            >
               {link.name}
             </NavLink>
           ))}
