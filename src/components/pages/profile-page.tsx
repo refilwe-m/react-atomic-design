@@ -1,19 +1,6 @@
 import { Outlet, Route, Routes, useNavigate } from "react-router";
 
-import { Button, ProfilePanel } from "..";
-import {
-  CartesianGrid,
-  Legend,
-  Line,
-  LineChart,
-  Rectangle,
-  ReferenceArea,
-  ReferenceDot,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
+import { ProfilePanel } from "..";
 
 export const ProfilePage = () => {
   return (
