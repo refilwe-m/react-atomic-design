@@ -4,6 +4,10 @@ import { NavLink } from "react-router-dom";
 export const Nav = () => {
   const navLinks = [
     {
+      name: "Index",
+      path: "/index",
+    },
+    {
       name: "Profile",
       path: "/profile",
     },
